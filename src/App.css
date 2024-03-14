@@ -1,0 +1,14 @@
+/* write your css here */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,body{
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.home_bg{
+    background: url("./assets/Images/bghome.svg");
+}
