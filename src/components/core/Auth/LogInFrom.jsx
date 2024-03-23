@@ -81,7 +81,7 @@ function LogInFrom() {
           </div>
 
           <div className="flex justify-end">
-            <Link to="/forgetPassword" className="text-blue-100 text-[12px]">
+            <Link to="/forget-password" className="text-blue-100 text-[12px]">
               Forget Password
             </Link>
           </div>

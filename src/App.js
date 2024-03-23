@@ -5,6 +5,7 @@ import NavBar from "./components/common/Navbar";
 import SignUp from "./Pages/SignUp"
 import LogIn from "./Pages/LogIn";
 import OpenRoute from "./components/core/Auth/OpenRoute";
+import ForgetPassword from "./Pages/ForgetPassword";
 
 function App() {
   return (
@@ -18,6 +19,16 @@ function App() {
     <Route path="/login" element={<OpenRoute>
       <LogIn />
     </OpenRoute>} />
+
+    <Route path="/forget-password"
+    element={
+
+        <OpenRoute>
+          <ForgetPassword/>
+        </OpenRoute>
+   
+    }/>
+    
  
     </Routes>
    </div>

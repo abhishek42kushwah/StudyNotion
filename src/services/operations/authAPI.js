@@ -53,7 +53,7 @@ return async (dispatch) =>{
 //     }
 // }
 
-export function getPasswordResetToken(email,setEmailSent){
+function getPasswordResetToken(email,setEmailSent){
     return async(dispatch)=>{
         dispatch(setLoading(true));
         try {
@@ -61,6 +61,7 @@ export function getPasswordResetToken(email,setEmailSent){
             console.log("reset-password-token res...",response);
             if(!response.data.success){
                 throw new Error(response.data.message)
+
             }
              toast.success("Reset Email Send")
              setEmailSent(true)
@@ -72,6 +73,7 @@ export function getPasswordResetToken(email,setEmailSent){
     }
 }
 
+export default getPasswordResetToken;
 
 // function for logout 
 export function logout(navigate){
