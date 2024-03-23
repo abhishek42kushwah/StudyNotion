@@ -118,7 +118,7 @@ dispatch(setSignupData(signUpData))
 
         <div>
           <div>
-            <div className="text-white">
+            <div className="text-white pt-3">
               Email Address<sup className="text-red">*</sup>
             </div>
             <input
@@ -133,8 +133,8 @@ dispatch(setSignupData(signUpData))
           </div>
         </div>
 
-        <div className="flex gap-x-3 relative ">
-          <div className="flex  flex-col gap-x-3">
+        <div className="flex gap-x-3 relative pt-3  ">
+          <div className="flex  flex-col gap-x-3 ">
             <div className="text-white gap-x-1">
               Create Password<sup className="text-red">*</sup>
             </div>
