@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { LiaEyeSolid } from "react-icons/lia";
 import { LiaEyeSlash } from "react-icons/lia";
-
+import {ACCOUNT_TYPE} from "../../../utils/constants"
+import setSignupData from "../../../Slice/authSlice"
+import  {useDispatch} from 'react-redux';
+import { useNavigate } from "react-router-dom";
+import Tab from "../../common/Tab"
 
 function SignUpForm() {
-  const [accountType, setAccountType] = useState("student");
+  const [accountType, setAccountType] = useState(ACCOUNT_TYPE.STUDENT);
   const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch()
+  const  navigate = useNavigate();
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [fromData, setFormData] = useState({
     firstName:"",
@@ -32,26 +38,54 @@ function SignUpForm() {
     //    toast.error('Password Not Match');
     //   }
     if (password !== confirmPassword) {
-      toast.error("Passwords Do Not Match");
-      return;
+      toast.error("Passwords Do Not Match")
+      return
     }
-    toast.success( "SuccessFully Register ")
+
+
+    
+// reset
+setFormData({
+  firstName:"",
+  lastName:"",
+  email:"",
+  password:"",
+  confirmPassword:"",
+})
+setAccountType(ACCOUNT_TYPE.STUDENT)
+
+const signUpData = {
+  ...fromData,
+  accountType,
+};
+console.log(signUpData);
+console.log(setSignupData);
+    // Setting signup data to state
+    // To be used after otp verification
+dispatch(setSignupData(signUpData))
+
+// dispatch(sendOtp(fromData,email,navigate))
+   
   };
 
-  const signUpData = {
-    ...fromData,
-    accountType,
-  };
+  const tabData = [
+    {
+      id: 1,
+      tabName: "Student",
+      type: ACCOUNT_TYPE.STUDENT,
+    },
+    {
+      id: 2,
+      tabName: "Instructor",
+      type: ACCOUNT_TYPE.INSTRUCTOR,
+    },
+  ]
 
   return (
-    <form onSubmit={submitHandler}>
+    <div>
+    <Tab tabData={tabData}  field={accountType} setField={setAccountType} />
+     <form onSubmit={submitHandler}>
       <div className="">
-        <div className="text-white">
-          <button onClick={() => setAccountType("Student")}>Student</button>
-          <button onClick={() => setAccountType("Instructor")}>
-            Instructor
-          </button>
-        </div>
         <div className="flex gap-x-3 ">
           <div className="text-white pt-6 text-[1rem] flex flex-col ">
             <div>
@@ -63,7 +97,7 @@ function SignUpForm() {
               name="firstName"
               placeholder="Enter first Name"
               required
-              value={fromData.firstName}
+              value={firstName}
               onChange={handleChange}
             />
           </div>
@@ -76,7 +110,7 @@ function SignUpForm() {
               type="text"
               name="lastName"
               placeholder="Enter last Name"
-              value={fromData.lastName}
+              value={lastName}
               onChange={handleChange}
             />
           </div>
@@ -92,14 +126,14 @@ function SignUpForm() {
               name="email"
               placeholder="Enter email address"
               required
-              value={fromData.email}
+              value={email}
               onChange={handleChange}
               className="text-white bg-richblack-700 w-[480px] pl-3 mt-1 h-[45px] outline-none rounded-md border-b  "
             />
           </div>
         </div>
 
-        <div className="flex gap-x-3">
+        <div className="flex gap-x-3 relative ">
           <div className="flex  flex-col gap-x-3">
             <div className="text-white gap-x-1">
               Create Password<sup className="text-red">*</sup>
@@ -109,7 +143,7 @@ function SignUpForm() {
               type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Enter Password"
-              value={fromData.password}
+              value={password}
               onChange={handleChange}
             />
             <span
@@ -132,7 +166,7 @@ function SignUpForm() {
               type={showConfirmPassword ? "text " : "Password"}
               name="confirmPassword"
               placeholder="Confirm Password"
-              value={fromData.confirmPassword}
+              value={confirmPassword}
               onChange={handleChange}
             />
 
@@ -156,6 +190,8 @@ function SignUpForm() {
         </button>
       </div>
     </form>
+    </div>
+   
   );
 }
 

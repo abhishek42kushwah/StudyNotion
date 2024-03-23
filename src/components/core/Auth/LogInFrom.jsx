@@ -40,7 +40,7 @@ function LogInFrom() {
             <input
               type="text"
               // id='email'
-              value={formData.email}
+              value={email}
               name="email"
               placeholder="Enter email address"
               onChange={handleOnChange}
@@ -53,7 +53,7 @@ function LogInFrom() {
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
-                value={formData.password}
+                value={password}
                 name="password"
                 placeholder="Enter Password"
                 onChange={handleOnChange}

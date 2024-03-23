@@ -108,7 +108,7 @@ function NavBar() {
         {/* login/signup/dashboard */}
 
         <div className="flex gap-4 items-center ">
-          {user && user?.accountType != "instructor" && (
+          {user && user?.accountType !="instructor" && (
             <Link to="/dashboard/cart" className="relative ">
               <RiShoppingCartFill />
               {totalItems > 0 && <span>{totalItems}</span>}
@@ -117,7 +117,7 @@ function NavBar() {
           {token === null && (
             <Link to="/login">
               <button className="bg-richblack-800 px-[12px] rounded-md text-richblack-100 border-[1px] border-richblack-700 py-[8px] ">
-                Log in
+                log in
               </button>
             </Link>
           )}
