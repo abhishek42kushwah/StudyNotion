@@ -8,6 +8,7 @@ import CodeSection from "../components/core/HomePages/CodeSection";
 import LeaderShip from "../components/core/HomePages/LeaderShip";
 import TimeCalender from "../components/core/HomePages/TimeCalender";
 import PowerCard from "../components/core/HomePages/PowerCard";
+import UpdatePassword from "./UpdatePassword";
 function Home() {
   return (
     <div>
@@ -195,6 +196,7 @@ function Home() {
       
 
       {/* footer */}
+     
     </div>
   );
 }

@@ -4,6 +4,7 @@ import {resetCart} from "../../Slice/cartSlice";
 import {setUser} from "../../Slice/profileSlice";
 import { apiConnector } from "../apiconnector";
 import {endpoints} from "../apis";
+import { configureStore } from "@reduxjs/toolkit";
 
 const {
     SENDOTP_API,
@@ -53,6 +54,26 @@ return async (dispatch) =>{
 //     }
 // }
 
+export function resetPassword(password,confirmPassword,token){
+    return async(dispatch)=>{
+        dispatch(setLoading(true));
+        try {
+            const response = await apiConnector("POST",RESETPASSWORD_API,{password,confirmPassword,token});
+            console.log("response here ..",response);
+            if(!response.data.success){
+                throw new Error(response.data.message)
+            }
+
+            toast.success("reset password SuccessFully")
+        } catch (error) {
+            toast.error("unable to reset password")
+            console.log("RESET PASSWORD TOKEN Error", error);
+        }
+        dispatch(setLoading(false))
+    }
+}
+
+
 function getPasswordResetToken(email,setEmailSent){
     return async(dispatch)=>{
         dispatch(setLoading(true));
@@ -72,18 +93,19 @@ function getPasswordResetToken(email,setEmailSent){
         dispatch(setLoading(false))
     }
 }
-
 export default getPasswordResetToken;
+ 
 
 // function for logout 
-export function logout(navigate){
-    return(dispatch)=>{
-        dispatch(setToken(null))
-        dispatch(setUser(null))
-        dispatch(resetCart())
-        localStorage.removeItem("token")
-        localStorage.removeItem("user")
-        toast.success("Logged Out");
-        navigate("/")
+export function logout(navigate) {
+    return (dispatch) => {
+      dispatch(setToken(null))
+      dispatch(setUser(null))
+      dispatch(resetCart())
+      localStorage.removeItems("token")
+      localStorage.removeItems("user")
+      toast.success("Logged Out")
+      navigate("/")
     }
-}
+  }
+  

@@ -7,6 +7,7 @@ import setSignupData from "../../../Slice/authSlice"
 import  {useDispatch} from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import Tab from "../../common/Tab"
+import UpdatePassword from "../../../Pages/UpdatePassword";
 
 function SignUpForm() {
   const [accountType, setAccountType] = useState(ACCOUNT_TYPE.STUDENT);
@@ -190,6 +191,7 @@ dispatch(setSignupData(signUpData))
         </button>
       </div>
     </form>
+   
     </div>
    
   );
