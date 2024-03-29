@@ -31,14 +31,14 @@ function Para() {
 
 <div className='flex mx-auto mt-[20%] justify-between items-center w-11/12 '>
   <div className='w-5/12'>
-<h1 className='text-4xl mt-6 text-red  '>Our vision </h1>
+<h1 className='text-4xl mt-6 text-[#F77B22] '>Our vision </h1>
 <p className='font-bold text-richblack-400 pt-10'>
 With this vision in mind, we set out on a journey to create an e-learning platform that would revolutionize the way people learn. Our team of dedicated experts worked tirelessly to develop a robust and intuitive platform that combines cutting-edge technology with engaging content, fostering a dynamic and interactive learning experience.
 </p>
   </div>
   <div className='w-5/12'>
 
-<h1 className='text-blue-200 text-4xl mt-6 '>Our Mission</h1>
+<h1 className='text-[#24DDF4] text-4xl mt-6 '>Our Mission</h1>
 <p className='font-bold text-richblack-400 pt-10'>Our mission goes beyond just delivering courses online. We wanted to create a vibrant community of learners, where individuals can connect, collaborate, and learn from one another. We believe that knowledge thrives in an environment of sharing and dialogue, and we foster this spirit of collaboration through forums, live sessions, and networking opportunities.
 
 </p>
@@ -49,27 +49,27 @@ With this vision in mind, we set out on a journey to create an e-learning platfo
     </div>
 
     <div className='bg-richblack-700 w-11/12 h-[120px] flex justify-around items-center  '>
-      <div>
-        <p  className='font-bold text-2xl text-white '>5K</p>
-        <p className='text-richblack-400 font-bold'>
+      <div className='flex justify-center flex-col items-center'>
+        <p  className='font-bold text-3xl text-white '>5K</p>
+        <p className='text-richblack-400 font-bold pt-1'>
           Active Students  
         </p>
       </div>
       <div>
-        <p className='font-bold text-2xl text-white'>10+</p>
-        <p className='text-richblack-400 font-bold'>
+        <p className='font-bold text-3xl text-white'>10+</p>
+        <p className='text-richblack-400 font-bold pt-1'>
           Mentors  
         </p>
       </div>
       <div>
-        <p className='font-bold text-2xl text-white'>200+</p>
-        <p className='text-richblack-400 font-bold'>
+        <p className='font-bold text-3xl text-white'>200+</p>
+        <p className='text-richblack-400 font-bold ml-2 pt-1'>
         courses  
         </p>
       </div>
       <div>
-        <p className='font-bold text-2xl text-white'>50+</p>
-        <p className='text-richblack-400 font-bold'>
+        <p className='font-bold text-3xl text-white'>50+</p>
+        <p className='text-richblack-400 font-bold pt-1'>
           Awards  
         </p>
       </div>
