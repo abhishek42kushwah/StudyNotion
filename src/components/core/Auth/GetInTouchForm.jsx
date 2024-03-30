@@ -10,6 +10,9 @@ function GetInTouchForm() {
          <div>
           <ContactForm />
          </div>
+         <div className='text-white text-4xl font-semibold pt-36'>
+          Reviews from other learners
+         </div>
       </div>
     </div>
   )
