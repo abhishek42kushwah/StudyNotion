@@ -83,45 +83,46 @@ function ContactForm() {
           {errors.email && <span>Please enter your email address</span>}
         </div>
 
-         <div className="flex flex-col gap-y-2  ">
+        <div className="flex flex-col gap-y-2  ">
           <label htmlFor="phoneNo" className="text-white pt-3">
             Phone Number
           </label>
-          <div className="flex gap-x-3" >
-            <select 
-            className="w-[30%] text-white bg-richblack-700 pl-3  outline-none rounded-md border-b  h-[45px]"
-            name="phoneNo"
-            
-            id="phoneNo" 
-            htmlFor="phoneNo"
-            {...register("phoneNo",{required:true})}
-             >
-            {
-              phoneData.map((element, index) => {
-               return (<option key={index}  value={element} >{element.code} -{element.country}</option>
-              )
-              }
-              )
-
-            
-            }
+          <div className="flex gap-x-3">
+            <select
+              className="w-[30%] text-white bg-richblack-700 pl-3  outline-none rounded-md border-b  h-[45px]"
+              name="phoneNo"
+              id="phoneNo"
+              htmlFor="phoneNo"
+              {...register("phoneNo", { required: true })}
+            >
+              {phoneData.map((element, index) => {
+                return (
+                  <option key={index} value={element}>
+                    {element.code} -{element.country}
+                  </option>
+                );
+              })}
             </select>
             <div className="w-[70%]">
-              <input type="number"
-              className="text-white bg-richblack-700 w-[100%] pl-3  h-[45px] outline-none rounded-md border-b  "
-               name="phoneNo"
-               id="phoneNo"
-               placeholder="Phone number"
-               {...register('phoneNo', {required:{value:true,message:"Please Enter Phone Number"}
-               ,maxLength:{value:10,message:"Invalid Phone NUmber"},
-               minLength:{value:8,message:"Invalid Phone Number"}})}
-               />
+              <input
+                type="number"
+                className="text-white bg-richblack-700 w-[100%] pl-3  h-[45px] outline-none rounded-md border-b  "
+                name="phoneNo"
+                id="phoneNo"
+                placeholder="Phone number"
+                {...register("phoneNo", {
+                  required: {
+                    value: true,
+                    message: "Please Enter Phone Number",
+                  },
+                  maxLength: { value: 10, message: "Invalid Phone NUmber" },
+                  minLength: { value: 8, message: "Invalid Phone Number" },
+                })}
+              />
             </div>
-            {
-              errors.phoneNo
-            }
+            {errors.phoneNo}
           </div>
-         </div>
+        </div>
 
         <div className="text-white flex flex-col pt-3">
           <label htmlFor="message">Message</label>
@@ -154,4 +155,4 @@ function ContactForm() {
   );
 }
 
-export default ContactForm; 
+export default ContactForm;

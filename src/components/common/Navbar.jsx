@@ -109,9 +109,9 @@ function NavBar() {
 
         <div className="flex gap-4 items-center ">
         {
-                user && user?.accountType != "Instructor" && (
+          user && user?.accountType != "Instructor"  && (
                     <Link to="/dashboard/cart" className='relative'>
-                        <RiShoppingCartFill />
+                        <RiShoppingCartFill size={30} />
                         {
                             totalItems > 0 && (
                                 <span>
