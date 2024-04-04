@@ -11,7 +11,7 @@ function MyProfile() {
     <div className="text-white w-8/12">
       <h1 className="text-4xl font-bold ml-[30%] ">My Profile</h1>
       {/* section 1  */}
-      <div className="flex  gap-x-8 mt-6 ml-[30%] rounded-lg  bg-richblack-700 w-[100%] h-[130px] ">
+      <div className="flex  gap-x-24 mt-6 ml-[30%] rounded-lg  bg-richblack-700 w-[100%] h-[130px] ">
         <div className="flex items-center justify-center p-20  gap-x-6 -mt-3 -ml-10 ">
           <img
             src={`${user?.image}`}
@@ -35,10 +35,10 @@ function MyProfile() {
       </div>
 
       {/* section 2*/}
-      <div className="flex flex-col gap-x-8 mt-6 ml-[30%] rounded-lg  bg-richblack-700 w-[100%] h-[130px]  ">
-        <div className="flex justify-between  items-center  ">
+      <div className="flex flex-col  mt-6 ml-[30%] rounded-lg  bg-richblack-700 w-[100%] h-[130px]  ">
+        <div className="flex justify-between  items-center  w-11/12 ">
           <p className="font-bold ml-5 p-6">About</p>
-          <div className="text-cerner gap-x-2  items-center text-[13px] px-6 justify-center py-3 rounded-md font-bold bg-yellow-25 text-black flex mr-16">
+          <div className="text-cerner gap-x-2  items-center text-[13px] px-6 justify-center py-3 rounded-md font-bold bg-yellow-25 text-black flex mr-6">
             <IconBtn
               text="Edit"
               onclick={() => navigate("dashboard/settings")}
