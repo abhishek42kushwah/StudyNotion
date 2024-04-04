@@ -11,7 +11,9 @@ function Sidebar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [confirmationModal, setConfirmationModal] = useState(null);
-  const { user, loading: profileLoading } = useSelector((state) => state.profile);
+  const { user, loading: profileLoading } = useSelector(
+    (state) => state.profile
+  );
   const { loading: authLoading } = useSelector((state) => state.auth);
 
   if (authLoading || profileLoading) {
@@ -39,11 +41,10 @@ function Sidebar() {
             link={{ name: "Settings", path: "dashboard/settings" }}
             iconName="VscSettingsGear "
           /> */}
-          <SidebarLink 
-                        link={{name:"Settings", path:"dashboard/settings"}}
-                        iconName="VscSettingsGear"
-                    />
-
+          <SidebarLink
+            link={{ name: "Settings", path: "dashboard/settings" }}
+            iconName="VscSettingsGear"
+          />
           <button
             onClick={() =>
               setConfirmationModal({
@@ -55,7 +56,7 @@ function Sidebar() {
                 btn2Handler: () => setConfirmationModal(null),
               })
             }
-            className="text-sm font-medium  ml-8 text-richblack-300"
+            className="text-sm font-medium   ml-8 text-richblack-300"
           >
             <div className="flex items-center gap-x-2 ">
               <VscSignOut className="text-lg" />

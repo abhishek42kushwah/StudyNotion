@@ -14,7 +14,7 @@ function SidebarLink({ link, iconName }) {
     <NavLink
       to={link.path}
       className={`relative px-8 py-2 text-sm font-medium ${
-        matchRoute(link.path) ? "bg-yellow-100 " : "bg-opacity-0 "
+        matchRoute(link.path) ? "bg-yellow-50 " : "bg-opacity-0 "
       }`}
     >
       <span

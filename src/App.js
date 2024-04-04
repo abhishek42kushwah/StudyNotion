@@ -12,7 +12,8 @@ import ContactAboutFrom from "./Pages/ContactAboutFrom";
 import MyProfile from "./components/core/Dashboard/MyProfile";
 import Dashboard from "./Pages/Dashboard";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";
-import Error from "./Pages/Error"
+import Error from "./Pages/Error";
+import Settings from "./Pages/Settings";
 function App() {
   return (
     <div className="w-screen min-h-screen mx-auto bg-richblack-900 flex flex-col font-inter">
@@ -62,6 +63,7 @@ function App() {
           }
         > 
         <Route path="dashboard/my-profile" element={<MyProfile />} />
+        {/* <Route path="dashboard/settings" element={<Settings />} /> */}
         </Route>
 
         <Route path="/about" element={<AboutUs />} />
