@@ -14,6 +14,6 @@ export const categories ={
 };
   
 export const  profileEndpoints = {
-    GET_USER_ENROLLED_COURSES_API : BASE_URL+"/profile/getEnrollmentCourse",
+    GET_ENROLLED_COURSES_API : BASE_URL+"/profile/getEnrollmentCourse",
     GET_USER_DETAILS_API : BASE_URL+"/profile/getAllUsersDetails"
 }

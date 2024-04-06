@@ -4,7 +4,7 @@ import { apiConnector } from "../apiconnector";
 import { logout } from "./authAPI";
 import { profileEndpoints } from "../apis";
 
-const { GET_USER_ENROLLED_COURSES_API, GET_USER_DETAILS_API } =
+const { GET_ENROLLED_COURSES_API, GET_USER_DETAILS_API } =
   profileEndpoints;
 
 export function getUserDetails(navigate, token) {
@@ -13,7 +13,7 @@ export function getUserDetails(navigate, token) {
     dispatch(setLoading(true));
     try {
       const response = await apiConnector("GET", GET_USER_DETAILS_API, null, {
-        Authorization: ` Bearer ${token}`,
+        Authorisation: ` Bearer ${token}`,
       });
       console.log("GET_USER_DETAILS_API RESPONSE", response);
 
@@ -42,10 +42,11 @@ export async function getUserEnrolledCourses(token) {
     console.log("BEFORE Calling BACKEND API FOR ENROLLED COURSES");
     const response = await apiConnector(
       "GET",
-      GET_USER_ENROLLED_COURSES_API,
+      GET_ENROLLED_COURSES_API,
       null,
-      { Authorisation: `Bearer ${token}` }
+      { Authorization: `Bearer ${token}` }
     );
+    // console.log(token)
     console.log("AFTER Calling BACKEND API FOR ENROLLED COURSES");
     console.log("response here ", response);
 

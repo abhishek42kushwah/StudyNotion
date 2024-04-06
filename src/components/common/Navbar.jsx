@@ -8,6 +8,7 @@ import { RiShoppingCartFill } from "react-icons/ri";
 import { RiArrowDownSLine } from "react-icons/ri";
 import ProfileDropDown from "../core/Auth/ProfileDropDown";
 import { apiConnector } from "../../services/apiconnector";
+import { PiShoppingCartSimpleFill } from "react-icons/pi";
 import { categories } from "../../services/apis";
 function NavBar() { 
   const [subLinksNav, useSubLinksNav] = useState([]);
@@ -111,7 +112,9 @@ function NavBar() {
         {
           user && user?.accountType != "Instructor"  && (
                     <Link to="/dashboard/cart" className='relative'>
-                        <RiShoppingCartFill size={24} />
+                        {/* <RiShoppingCartFill size={24} /> */}
+                        <PiShoppingCartSimpleFill  size={24} />
+
                         {
                             totalItems > 0 && (
                                 <span>
