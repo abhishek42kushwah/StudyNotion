@@ -24,5 +24,5 @@ function Brighter() {
     </div>
   )
 }
-
+  
 export default Brighter

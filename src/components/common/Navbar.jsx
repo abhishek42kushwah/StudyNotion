@@ -111,7 +111,7 @@ function NavBar() {
         {
           user && user?.accountType != "Instructor"  && (
                     <Link to="/dashboard/cart" className='relative'>
-                        <RiShoppingCartFill size={30} />
+                        <RiShoppingCartFill size={24} />
                         {
                             totalItems > 0 && (
                                 <span>

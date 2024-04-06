@@ -21,11 +21,11 @@ function Sidebar() {
   }
 
   return (
-    <div>
-      <div
+    <div
         className="flex flex-col border-r-[1px]
-        border-r-richblack-700 bg-richblack-800 py-10 min-w-[222px] h-[100vh]"
+        border-r-richblack-700 bg-richblack-800  py-10 min-w-[222px] h-[100vh]"
       >
+    <div className="">
         <div className="flex flex-col">
           {sidebarLinks.map((link) => {
             if (link.type && user?.accountType !== link.type) return null;
@@ -58,7 +58,7 @@ function Sidebar() {
             }
             className="text-sm font-medium   ml-8 text-richblack-300"
           >
-            <div className="flex items-center gap-x-2 ">
+            <div className="flex items-center gap-x-2 mt-2 ">
               <VscSignOut className="text-lg" />
               <span>logout</span>
             </div>

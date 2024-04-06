@@ -78,7 +78,7 @@ function MyProfile() {
               <div>
                 <h1>last Name</h1>
                 <div className="text-richblack-400 font-bold">
-                {user?.lastName}
+                  {user?.lastName}
                 </div>
               </div>
             </div>
@@ -86,7 +86,9 @@ function MyProfile() {
             <div className="flex gap-x-24 ml-5 pt-3 ">
               <div>
                 <h1>Email</h1>
-                <div className="text-richblack-400 font-bold">{user?.email}</div>
+                <div className="text-richblack-400 font-bold">
+                  {user?.email}
+                </div>
               </div>
               <div className="ml-2">
                 <h1>Phone Number</h1>
@@ -100,12 +102,16 @@ function MyProfile() {
             <div className="flex gap-x-72 ml-5 pt-3">
               <div>
                 <h1>Gender</h1>
-                <div className="text-richblack-400 font-bold">{user?.additionalDetails?.gender ?? "Add Gender"}</div>
+                <div className="text-richblack-400 font-bold">
+                  {user?.additionalDetails?.gender ?? "Add Gender"}
+                </div>
               </div>
 
               <div className="-ml-4">
                 <h1> Date Of Birth</h1>
-                <div className="text-richblack-400 font-bold ">{user?.additionalDetails?.dateOfBirth ?? "Add DOB"}</div>
+                <div className="text-richblack-400 font-bold ">
+                  {user?.additionalDetails?.dateOfBirth ?? "Add DOB"}
+                </div>
               </div>
             </div>
           </div>
