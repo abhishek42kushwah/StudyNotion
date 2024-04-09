@@ -13,11 +13,11 @@ function RenderSteps() {
         },
         {
             id:3,
-            title: "Publis"
+            title: "Publish "
         }
     ]
   return (
-    <div>RenderSteps</div>
+    <div></div>
   )
 }
 
