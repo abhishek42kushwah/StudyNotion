@@ -14,10 +14,12 @@ import Dashboard from "./Pages/Dashboard";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";
 import Error from "./Pages/Error";
 import { ACCOUNT_TYPE } from "./utils/constants";
-
-import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses"
+import { useSelector } from "react-redux";
+import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
 import Cart from "./components/core/Dashboard/Cart";
+import AddCourse from "./components/core/Dashboard/AddCourse";
 function App() {
+  const { user } = useSelector((state) => state.profile);
   return (
     <div className="w-screen min-h-screen mx-auto bg-richblack-900 flex flex-col font-inter">
       <NavBar />
@@ -64,27 +66,30 @@ function App() {
               <Dashboard />
             </PrivateRoute>
           }
-        > 
-        <Route path="dashboard/my-profile" element={<MyProfile />} />
+        >
+          <Route path="dashboard/my-profile" element={<MyProfile />} />
 
-        <Route path="dashboard/cart" element={<Cart />} />
-        <Route path="dashboard/enrolled-courses" element ={<EnrolledCourses />} />
+          {user?.accountType === ACCOUNT_TYPE.STUDENT && (
+            <>
+              <Route path="dashboard/cart" element={<Cart />} />
+              <Route
+                path="dashboard/enrolled-courses"
+                element={<EnrolledCourses />}
+              />
+            </>
+          )}
 
-          {/* {
-            user?.accountType ===  ACCOUNT_TYPE.STUDENT &&
-            (
-             <>
-    
-             </>
-            )
-          } */}
-
+          {user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
+            <>
+              <Route path="dashboard/add-course" element={<AddCourse />} />
+            </>
+          )}
         </Route>
 
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactAboutFrom />} />
-      
-        <Route path="*" element={ <Error />}></Route>
+
+        <Route path="*" element={<Error />}></Route>
       </Routes>
     </div>
   );
