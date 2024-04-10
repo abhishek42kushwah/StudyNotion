@@ -175,8 +175,8 @@ export function logout(navigate) {
     dispatch(setToken(null));
     dispatch(setUser(null));
     dispatch(resetCart());
-    localStorage.removeItems("token");
-    localStorage.removeItems("user");
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     toast.success("Logged Out");
     navigate("/");
   };
