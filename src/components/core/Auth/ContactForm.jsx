@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import phoneData from "../../../data/countrycode.json";
+import {apiConnector} from "../../../services/apiconnector"
+import {contactUsEndpoints} from "../../../services/apis"
+
 function ContactForm() {
   const [loading, setLoading] = useState(false);
   const {
@@ -20,13 +23,13 @@ function ContactForm() {
         phoneNo: "",
       });
     }
-  }, [isSubmitSuccessFull, errors]);
+  }, [isSubmitSuccessFull, reset]);
 
   const submitContactFrom = async (data) => {
     console.log("Logging Data", data);
     try {
       setLoading(true);
-      const response = { status: "ok" };
+      const response = await apiConnector("POST",contactUsEndpoints.CONTACT_US_API,data)
       console.log("Logging data", response);
       setLoading(false);
     } catch (error) {
