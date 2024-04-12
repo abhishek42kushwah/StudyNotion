@@ -23,7 +23,7 @@ function ContactForm() {
         phoneNo: "",
       });
     }
-  }, [isSubmitSuccessFull, reset]);
+  }, [reset,isSubmitSuccessFull]);
 
   const submitContactFrom = async (data) => {
     console.log("Logging Data", data);
@@ -98,9 +98,9 @@ function ContactForm() {
               htmlFor="phoneNo"
               {...register("phoneNo", { required: true })}
             >
-              {phoneData.map((element, index) => {
+              {phoneData.map((element, i) => {
                 return (
-                  <option key={index} value={element}>
+                  <option key={i} value={element.code}>
                     {element.code} -{element.country}
                   </option>
                 );
@@ -148,6 +148,7 @@ function ContactForm() {
         </div>
 
         <button
+        disabled={loading}
           type="submit"
           className="text-cerner bg-yellow-50 text-[13px] px-32 py-3 rounded-md font-bold mt-8 "
         >

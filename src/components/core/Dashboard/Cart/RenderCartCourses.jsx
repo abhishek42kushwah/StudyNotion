@@ -3,7 +3,6 @@ import {useDispatch,useSelector} from "react-redux";
 import ReactStars from 'react-stars'
 import { FaStar } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
-
 import { removeFromCart } from "../../../../Slice/cartSlice";
 function RenderCartCourses() {
   const { cart } = useSelector((state) => state.cart);

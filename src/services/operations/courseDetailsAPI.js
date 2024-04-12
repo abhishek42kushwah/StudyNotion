@@ -66,7 +66,7 @@ export const fetchCourseDetails = async (courseId) => {
 export const fetchCourseCategories = async () => {
   let result = [];
   try {
-    const response = await apiConnector("GET", COURSE_CATEGORIES_API);
+    const response = await apiConnector("GET",COURSE_CATEGORIES_API);
     console.log("COURSE_API_RESPONSE_ERROR...", response);
 
     if (!response?.data?.success) {
