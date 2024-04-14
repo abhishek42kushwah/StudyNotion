@@ -44,7 +44,7 @@ function LogInFrom() {
               name="email"
               placeholder="Enter email address"
               onChange={handleOnChange}
-              className="text-white bg-richblack-700 w-[450px] pl-3 mt-1 h-[45px] outline-none rounded-md border-b  "
+              className="text-white bg-richblack-700 w-[450px] pl-3 mt-1 h-[45px] outline-none rounded-md border-b"
             />
             <div className="text-white pt-3 text-[1rem]">
               Password <sup className="text-red">*</sup>

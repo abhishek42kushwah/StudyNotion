@@ -68,12 +68,14 @@ export const fetchCourseCategories = async () => {
   try {
     const response = await apiConnector("GET",COURSE_CATEGORIES_API);
     console.log("COURSE_API_RESPONSE_ERROR...", response);
-
+       console.log(response?.data?.allCategory);
+   
     if (!response?.data?.success) {
       throw new Error("Could not fetch course Categories");
     }
 
-    result = response?.data?.data;
+    result = response?.data?.allCategory;
+    console.log(result);
   } catch (error) {
     console.log("COURSE_CATEGORIES_API_ERROR", error);
     toast.error(error.message);
