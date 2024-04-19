@@ -10,7 +10,8 @@ function AddCourse() {
           <div>
             <RenderSteps />
           </div>
-          <div className="border-2 border-richblack-800 bg-richblack-800 space-y-1 w-[40%] min-w-200px rounded-md p-3 ml-2 pl-3 ">
+          <div className="border-2 border-richblack-800 bg-richblack-800 space-y-1 w-[40%] 
+           h-350px min-w-200px rounded-md p-3 ml-2 pl-3 ">
             <h1 className="flex space-x-1  items-center text-xl ">
               <MdOutlineElectricBolt color="yellow" />
               Course upload Tips

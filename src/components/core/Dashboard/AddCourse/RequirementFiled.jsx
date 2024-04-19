@@ -67,7 +67,7 @@ function RequirementFiled({
               <button 
               type="button"
               onClick={()=>handleRemoveRequirement(index)}
-              className="text-sm text-pure-greys-300 ">clear</button>
+              className="text-sm text-pure-greys-300 pl-1 ">clear</button>
             </li>
       ))} 
         </ul>
