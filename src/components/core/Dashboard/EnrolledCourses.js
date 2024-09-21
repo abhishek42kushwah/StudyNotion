@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { getUserEnrolledCourses } from "../../../services/operations/ProfileAPI";
 import ProgressBar from '@ramonak/react-progress-bar';
 function EnrolledCourses() {
-  const {token}  = useSelector((state) => state.auth);
+  const { token } = useSelector((state) => state.auth);
   // const { token } = useSelector((state) => state.profile);
   const [enrolledCourses, setEnrolledCourses] = useState(null);
 
@@ -16,9 +16,9 @@ function EnrolledCourses() {
     }
   };
 
-  useEffect(()=> {
+  useEffect(() => {
     getEnrolledCourses();
-},[]);
+  }, []);
 
   return (
     <div className="text-white ">
@@ -44,20 +44,20 @@ function EnrolledCourses() {
                 </div>
               </div>
 
-               <div>
+              <div>
                 {course?.totalDuration}
-               </div>
+              </div>
 
-               <div>
+              <div>
                 <p>
-                  Progress : {course.progressPercentage || 0 }%
+                  Progress : {course.progressPercentage || 0}%
                 </p>
                 <ProgressBar
-                                        completed={course.progressPercentage || 0}
-                                        height='8px'
-                                        isLabelVisible={false}
-                                        />
-               </div>
+                  completed={course.progressPercentage || 0}
+                  height='8px'
+                  isLabelVisible={false}
+                />
+              </div>
 
             </div>;
           })}

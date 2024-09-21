@@ -5,10 +5,14 @@ import UpdateProfileView from "./UpdateProfileView";
 import DeleteAccount from "./DeleteAccount";
 function SettingView() {
   return (
-    <div className='text-white'>
+    <div className='text-white p-6'>
+
     <ChangeProfileView />
+         
       <EditProfileView />
+      {/* password update  */}
       <UpdateProfileView />
+      {/* deleteAccount */}
       <DeleteAccount />
     </div>
   )

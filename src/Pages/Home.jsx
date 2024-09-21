@@ -13,7 +13,7 @@ function Home() {
   return (
     <div>
       {/* Section 1  */}
-      <div className=" h-[100%] relative mx-auto pt-[2rem] flex flex-col w-11/12 max-w-maxContent items-center text-white justify-between">
+      <div className=" h-[100%] relative mx-auto pt-[6rem] flex flex-col w-11/12 max-w-maxContent items-center text-white justify-between">
         <Link to={"/signup"}>
           <div
             className="group mx-auto relative rounded-full bg-richblack-800 hover:bg-richblack-900 px-[3rem] py-[10px] font-bold text-richblack-200

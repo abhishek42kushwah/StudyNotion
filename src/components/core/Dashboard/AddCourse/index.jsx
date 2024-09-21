@@ -1,24 +1,24 @@
-import React from "react";
-import { MdOutlineElectricBolt } from "react-icons/md";
-import RenderSteps from "./RenderSteps";
+import React from 'react'
+import RenderSteps from "./RenderSteps"
+import { AiFillThunderbolt } from "react-icons/ai";
+
+ 
 function AddCourse() {
   return (
-    <div className="text-white">
-      <div>
-        <h1 className="text-3xl font-bold">Add Course</h1>
-        <div className="flex">
-          <div>
-            <RenderSteps />
-          </div>
-          <div className="border-2 border-richblack-800 bg-richblack-800 space-y-1 w-[40%] 
-           h-350px min-w-200px rounded-md p-3 ml-2 pl-3 ">
-            <h1 className="flex space-x-1  items-center text-xl ">
-              <MdOutlineElectricBolt color="yellow" />
-              Course upload Tips
-            </h1>
-
-            <li>Set the course price and make it free.</li>
-            <li>Standard size for course thumbnail is 1024⨯578.</li>
+    <div className='mx-auto text-white w-11/12'>
+      <div className='mx-10'>
+        <h1 className='text-white text-4xl font-semibold'>AddCourse</h1>
+        <div className='flex gap-x-6 mt-6'>
+        <div>
+        <RenderSteps  />
+        </div>
+        <div className='bg-richblack-800 w-[450px] rounded-md border-[1px] border-richblack-400 p-6'>
+        <div className='flex gap-x-1   '>
+        <AiFillThunderbolt  className='text-yellow-50' size={24} />
+        <p className='text-xl'>Code Upload Tips</p>
+        </div>
+           <ul> <li>Set the Course Price option or make it free.</li>
+            <li>Standard size for the course thumbnail is 1024x576.</li>
             <li>Video section controls the course overview video.</li>
             <li>Course Builder is where you create & organize a course.</li>
             <li>
@@ -26,16 +26,18 @@ function AddCourse() {
               quizzes, and assignments.
             </li>
             <li>
-              information form Additional Data section shows up on the courses
-              single page.
+              Information from the Additional Data section shows up on the
+              course single page.
             </li>
-            <li>Make Announcement to notify any important.</li>
-            <li>Notices to all enrolled students at once.</li>
-          </div>
+            <li>Make Announcements to notify any important</li>
+            <li>Notes to all enrolled students at once.</li>
+           </ul>
+
+        </div>
         </div>
       </div>
     </div>
-  );
+)
 }
 
 export default AddCourse;

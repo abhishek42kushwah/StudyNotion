@@ -1,8 +1,11 @@
 import React from 'react'
 
 function EditProfileView() {
+  
   return (
-    <div>EditProfileView</div>
+    <>
+EditProfileView
+    </>
   )
 }
 

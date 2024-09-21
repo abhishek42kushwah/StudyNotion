@@ -22,10 +22,10 @@ function Sidebar() {
 
   return (
     <div
-        className="flex flex-col border-r-[1px]
+      className="flex flex-col border-r-[1px]
         border-r-richblack-700 bg-richblack-800  py-10 min-w-[222px] h-[100vh]"
-      >
-    <div className="">
+    >
+      <div className="">
         <div className="flex flex-col">
           {sidebarLinks.map((link) => {
             if (link.type && user?.accountType !== link.type) return null;

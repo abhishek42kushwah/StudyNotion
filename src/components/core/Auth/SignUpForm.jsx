@@ -6,6 +6,7 @@ import {ACCOUNT_TYPE} from "../../../utils/constants"
 import setSignupData from "../../../Slice/authSlice"
 import  {useDispatch} from 'react-redux';
 import { useNavigate } from "react-router-dom";
+import {sendOtp} from "../../../services/operations/authAPI"
 import Tab from "../../common/Tab"
 import UpdatePassword from "../../../Pages/UpdatePassword";
 
@@ -59,13 +60,15 @@ const signUpData = {
   ...fromData,
   accountType,
 };
+console.log(accountType)
 console.log(signUpData);
 console.log(setSignupData);
     // Setting signup data to state
     // To be used after otp verification
 dispatch(setSignupData(signUpData))
 
-// dispatch(sendOtp(fromData,email,navigate))
+
+dispatch(sendOtp(fromData,email,navigate))
    
   };
 
@@ -185,7 +188,7 @@ dispatch(setSignupData(signUpData))
           className="text-cerner text-[1rem] flex mt-6 px-[180px] py-3 rounded-md font-bold 
     bg-yellow-50 text-black  
     hover:scale-95 transition-all duration-200"
-          type="submit"
+         type="submit"
         >
           Create Account
         </button>

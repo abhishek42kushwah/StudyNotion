@@ -91,8 +91,7 @@ toast.dismiss(toastId)
 }
 
 export  function deleteProfile(token,navigate){
-    const toastId = toast.loading("Loading...")
-    return async(dispatch)=> {
+  return async(dispatch)=> {
         const toastId = toast.loading("Loading...")
         try {
           const response = await apiConnector("DELETE", DELETE_PROFILE_API, null, {

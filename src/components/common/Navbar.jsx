@@ -68,18 +68,18 @@ function NavBar() {
                  
                     <RiArrowDownSLine />
                     <div
-                      className=" absolute left-[50%] top-[50%] 
+                      className=" absolute left-[50%]  top-[5%]
                       flex flex-col translate-x-[-50%] translate-y-[50%] rounded-md
                        bg-richblack-5 p-4 text-richblack-900 
                       opacity-0 transition-all duration-200 group-hover:opacity-100
-                       group-hover:visited lg:w-[300px]"
+                       group-hover:visited lg:w-[400px]"
                     >
                       <div className="absolute rounded rotate-45 
-                      left-[75%] top-6 h-6 w-6 bg-richblack-5"></div>                      
+                      left-[75%] top-2 h-6 w-6  bg-richblack-5"></div>                      
                         {subLinks.length ? (
                           subLinks.map((subLinks, index) => (
                             <Link to={`${subLinks.link}`} key={index}>
-                              <p>{subLinks.title}</p>
+                              <p className="hover:bg-richblack-400 hover:font-bold ">{subLinks.title}</p>
                             </Link>
                           ))
                         ) : (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CourseBuilderForm() {
+function PublishPage() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function CourseBuilderForm() {
   )
 }
 
-export default CourseBuilderForm
+export default PublishPage
