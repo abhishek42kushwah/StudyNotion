@@ -3,7 +3,7 @@ import ImageBack from "../../assets/Images/FoundingStory.png"
 function Para() {
   return (
     <div>
-      <div className='bg-richblack-900 pt-32 pb-36 '>
+      <div className='bg-richblack-900 pt-32 pb-36  '>
         <div className=" w-11/12 mx-auto flex justify-between items-center  ">
           <div className='w-6/12 '>
             <h1 className=" text-4xl my-9 text-red font-bold ">Our Founding Story</h1>

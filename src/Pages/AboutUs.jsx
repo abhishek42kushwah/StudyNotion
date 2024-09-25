@@ -7,7 +7,7 @@ import GetInTouchForm from '../components/core/Auth/GetInTouchForm'
 
 function AboutUs() {
   return (
-    <div className='bg-richblack-700'>
+    <div className='bg-richblack-700 '>
        
        {/* section 1  */}
        <Brighter />

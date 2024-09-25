@@ -68,13 +68,13 @@ function App() {
             </PrivateRoute>
           }
         >
-          <Route path="dashboard/my-profile" element={<MyProfile />} />
-          <Route path="dashboard/Settings" element={<Settings />} />
+          <Route path="/dashboard/my-profile" element={<MyProfile />} />
+          <Route path="/dashboard/Settings" element={<Settings />} />
           {user?.accountType === ACCOUNT_TYPE.STUDENT && (
             <>
-              <Route path="dashboard/cart" element={<Cart />} />
+              <Route path="/dashboard/cart" element={<Cart />} />
               <Route
-                path="dashboard/enrolled-courses"
+                path="/dashboard/enrolled-courses"
                 element={<EnrolledCourses />}
               />
             </>
@@ -82,7 +82,7 @@ function App() {
 
           {user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
             <>
-              <Route path="dashboard/add-course" element={<AddCourse />} />
+              <Route path="/dashboard/add-course" element={<AddCourse />} />
             </>
           )}
         </Route>

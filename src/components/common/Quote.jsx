@@ -3,7 +3,7 @@ import HomeHightLightText from "../core/HomePages/HomeHightLightText";
 function Quote() {
   return (
     <div>
-      <div className="pt-40 bg-richblack-900  ">
+      <div className="pt-40 bg-richblack-900   ">
         <div className="text-white  mx-auto font-semibold text-4xl flex items-center justify-center ">
           <div className="w-11/12  ">
             <div className="justify-center items-center flex ">

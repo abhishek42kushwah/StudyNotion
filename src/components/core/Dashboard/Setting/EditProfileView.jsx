@@ -4,7 +4,7 @@ function EditProfileView() {
   
   return (
     <>
-EditProfileView
+     EditProfileView
     </>
   )
 }

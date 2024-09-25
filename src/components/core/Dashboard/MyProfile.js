@@ -6,10 +6,14 @@ import { TbEdit } from "react-icons/tb";
 
 function MyProfile() {
   const { user } = useSelector((state) => state.profile);
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
+  const editHandler =() =>{
+    navigate('/dashboard/settings')
+    
+  }
   return (
-    <div className="text-white w-8/12">
+    <div className="text-white w-8/12 pb-10">
       <h1 className="text-4xl font-bold ml-[30%]">My Profile</h1>
 
       {/* Section 1 */}
@@ -25,8 +29,10 @@ function MyProfile() {
             <p className="text-richblack-400">{user?.email}</p>
           </div>
         </div>
-        <div className="flex flex-row gap-x-1 items-center justify-center">
-          <IconBtn text="Edit" onClick={() => navigate("/dashboard/settings")}>
+        <div
+onClick={()=>editHandler()}
+className="flex flex-row gap-x-1  items-center justify-center">
+          <IconBtn text="Edit" >
             <TbEdit size={20} />
           </IconBtn>
         </div>
@@ -41,7 +47,7 @@ function MyProfile() {
           </div>
         </div>
         <div className="flex flex-row gap-x-1 items-center justify-center">
-          <IconBtn text="Edit" onClick={() => navigate("/dashboard/settings")}>
+          <IconBtn text="Edit" onClick={()=>editHandler() }>
             <TbEdit size={20} />
           </IconBtn>
         </div>
@@ -53,7 +59,7 @@ function MyProfile() {
           <div className="flex justify-between flex-row ">
             <div className="font-bold pl-14  ">Personal Details</div>
             <div className="flex flex-row -pr-8 gap-x-1 items-center justify-center">
-              <IconBtn text="Edit" onClick={() => navigate("/dashboard/settings")} >
+              <IconBtn text="Edit" onClick={() => editHandler()} >
               <TbEdit size={20} />
               </IconBtn>
             </div>
